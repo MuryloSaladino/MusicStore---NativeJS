@@ -8,6 +8,8 @@ const searchInput = document.getElementById("searchFilter")
 const priceInput = document.getElementById("priceFilter")
 const genreInputs = document.querySelectorAll(".genre-filter")
 
+const priceLabel = document.getElementById("priceFilterLabel")
+
 
 const callRender = () => {
     
@@ -22,5 +24,11 @@ const callRender = () => {
 
 
 searchInput.addEventListener("input", callRender)
-priceInput.addEventListener("input", callRender)
 genreInputs.forEach(input => input.addEventListener("input", callRender))
+priceInput.addEventListener("input", (e) => {
+    callRender()
+    priceLabel.innerText = `Max. Value - R$ ${Number(e.target.value).toFixed(2).replace(".",",")}`
+})
+
+
+callRender()

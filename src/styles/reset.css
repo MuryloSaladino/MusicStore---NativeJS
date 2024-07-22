@@ -20,3 +20,11 @@ button {
     cursor: pointer;
     color: inherit;
 }
+
+input {
+    outline: none;
+}
+
+ul, ol {
+    list-style: none;
+}

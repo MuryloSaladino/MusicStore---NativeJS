@@ -18,10 +18,12 @@
     <link rel="stylesheet" href="../../styles/header.css">
     <link rel="stylesheet" href="../../styles/footer.css">
     <link rel="stylesheet" href="../../styles/button.css">
+    <link rel="stylesheet" href="../../styles/input.css">
 
     <!-- PAGE STYLES -->
     <link rel="stylesheet" href="./styles/card.css">
     <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/filters.css">
 
     <!-- JAVASCRIPT CONTROLLER -->
     <script type="module" src="./scripts/controller.js" defer></script>
@@ -37,19 +39,33 @@
     <main>
         <h3>Musics</h3>
 
-        <input type="text" id="searchFilter">
-        <input type="range" id="priceFilter" min="0" max="100" step="1">
+        <div class="filters-container">
+            <h3>Filters:</h3>
 
-        <ul>
-            <li>
-                <input type="checkbox" id="cb1" class="genre-filter" data-genrename="Rock">
-                <label for="cb1">Rock</label>
-            </li>
-            <li>
-                <input type="checkbox" id="cb2" class="genre-filter" data-genrename="Rap">
-                <label for="cb2">Rap</label>
-            </li>
-        </ul>
+            <fieldset>
+                <label for="searchFilter" id="searchFilterLabel">Album name</label>
+                <input type="text" id="searchFilter" class="primary" placeholder='ex: "clouds", "atlas", ...' autocomplete="off">
+            </fieldset>
+
+            <fieldset>
+                <label for="priceFilter" id="priceFilterLabel">Max. Value - R$ 90,00</label>
+                <input type="range" id="priceFilter" min="0" max="100" step="0.1" value="90">
+            </fieldset>
+    
+            <fieldset>
+                <label>Genres</label>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="cb1" class="genre-filter" data-genrename="Rock" checked>
+                        <label for="cb1">Rock</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="cb2" class="genre-filter" data-genrename="Rap" checked>
+                        <label for="cb2">Rap</label>
+                    </li>
+                </ul>
+            </fieldset>
+        </div>
 
         <div id="filters"></div>
 
