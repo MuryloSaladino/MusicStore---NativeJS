@@ -1,8 +1,4 @@
 #music-container {
-    width: 95%;
-    max-width: 1000px;
-    margin: auto;
-
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
