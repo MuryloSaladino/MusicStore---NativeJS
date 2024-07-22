@@ -1,0 +1,12 @@
+button.primary {
+    width: max-content;
+
+    font-weight: 600;
+    font-size: 1rem;
+ 
+    background-color: rgb(39, 33, 77);
+    padding: 10px 20px;
+    border-radius: 10px;
+
+    align-self: flex-end;
+}
