@@ -1,1 +1,3 @@
-window.location.href = "./src/pages/home"
+import { setupCart } from "../pages/cart/scripts/cart.js"
+
+setupCart()

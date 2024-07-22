@@ -1,9 +1,13 @@
+import { addToCart } from "../../cart/scripts/cart.js";
+
 export const renderAlbums = (div, albums) => {
     div.innerHTML = ""
 
     albums.forEach(album => {
         div.insertAdjacentHTML("beforeend", musicToCardHtml(album))
     });
+
+    document.querySelectorAll(".add-to-cart").forEach(button => button.addEventListener("click", (e) => addToCart(e.target.getAttribute("data-product-id"))))
 }
 
 
@@ -21,7 +25,7 @@ const musicToCardHtml = (album) => `
                     <p>${album.featured.join(", ")}</p>
                 </div>` : ""
             }
-            <button class="primary" >Add to Cart</button>
+            <button class="primary add-to-cart" data-product-id="${album.id}">Add to Cart</button>
         </div>
     </li>
 `

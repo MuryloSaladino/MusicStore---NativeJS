@@ -1,5 +1,3 @@
-import data from "../../../data/musics.json" with { type: 'json' }
-
 export const setupCart = () => {
     if(!localStorage.getItem("@CART")) {
         localStorage.setItem("@CART", JSON.stringify([]))
@@ -12,11 +10,10 @@ export const addToCart = (id) => {
     
     const index = cart.findIndex(element => element.id == id)
 
-    if(index) {
+    if(index >= 0) {
         cart[index].qtd++
     } else {
-        const album = data.find(element => element.id == id)
-        cart.push({ ...album, qtd: 1 })
+        cart.push({ id: id, qtd: 1 })
     }
 
     localStorage.setItem("@CART", JSON.stringify(cart))
