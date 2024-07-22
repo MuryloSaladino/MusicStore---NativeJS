@@ -21,7 +21,7 @@ const musicToCardHtml = (album) => `
                     <p>${album.featured.join(", ")}</p>
                 </div>` : ""
             }
-            <button class="primary">Add to Cart</button>
+            <button class="primary" >Add to Cart</button>
         </div>
     </li>
 `
